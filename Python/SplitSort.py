@@ -9,7 +9,7 @@ cFreedom = df_main.sort_values(by='Freedom to make life choices', ascending=Fals
 cGenerosity = df_main.sort_values(by='Generosity', ascending=False)
 cCorruption = df_main.sort_values(by='Perceptions of corruption', ascending=False)
 cHGDP = df_main.sort_values(by='Happiness/GDP', ascending=False)
-cHLife = df_main.sort_values(by='Happiness/Life Expetancy', ascending=False)
+cHLife = df_main.sort_values(by='Happiness/Life Expectancy', ascending=False)
 cHSocSup = df_main.sort_values(by='Happiness/Social Support', ascending=False)
 cHFreedom = df_main.sort_values(by='Happiness/Freedom', ascending=False)
 cHGenerosity = df_main.sort_values(by='Happiness/Generosity', ascending=False)
