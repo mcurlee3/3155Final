@@ -36,6 +36,10 @@ def happyform():
     return render_template('/HappyForm.html')
 
 
+@app.route('/map')
+def map():
+    return render_template('/Happiness.html')
+    
 @app.route('/multiLine')
 def multiLine():
     return render_template('/multilinechart2.html')
