@@ -3,7 +3,13 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm, Form
 from wtforms import StringField, PasswordField, SubmitField, TextAreaField
-
+from important import Important
+import plotly
+import plotly.graph_objs as go
+import plotly.express as px
+import pandas as pd
+import numpy as np
+import json
 s = "nothing"
 
 
@@ -31,8 +37,11 @@ def data():
 def happyform():
     if request.method == 'POST':
         important = request.form.getlist('important')
-        print()
-        return(str(important))
+        df_totals  = Important(important)
+        df_totals = pd.read_csv('totals.csv', nrows = 10)
+        fig = px.pie(df_totals, values='totals', names='Country name', title='Your Best Matches')
+        graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+        return render_template('/totals.html', plot=graphJSON)
     return render_template('/HappyForm.html')
 
 
