@@ -4,6 +4,7 @@ from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm, Form
 from wtforms import StringField, PasswordField, SubmitField, TextAreaField
 from important import Important
+from hyper import Hyper
 import plotly
 import plotly.graph_objs as go
 import plotly.express as px
@@ -38,10 +39,11 @@ def happyform():
     if request.method == 'POST':
         important = request.form.getlist('important')
         df_totals  = Important(important)
+        link = Hyper(df_totals)
         df_totals = pd.read_csv('totals.csv', nrows = 10)
         fig = px.pie(df_totals, values='totals', names='Country name', title='Your Best Matches')
         graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-        return render_template('/totals.html', plot=graphJSON)
+        return render_template('/totals.html', plot=graphJSON, links=link)
     return render_template('/HappyForm.html')
 
 
