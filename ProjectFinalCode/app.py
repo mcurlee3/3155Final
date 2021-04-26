@@ -53,7 +53,7 @@ def map():
     
 @app.route('/multiLine')
 def multiLine():
-    return render_template('/multilinechart2.html')
+    return render_template('/multilinechart.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
