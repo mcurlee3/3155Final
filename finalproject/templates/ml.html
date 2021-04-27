@@ -1,0 +1,35 @@
+{% extends "/base.html" %}
+{% block content%}
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <div class="bg-faded p-5 d-flex mr-auto rounded">           
+            <h2 class="section-heading mb-0">
+              <span class="section-heading-upper">Test These Variables</span>
+              <span class="section-heading-lower">That Effect Happiness.</span>
+            </h2>
+          </div>
+        </div>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+        <div class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" id="multiline">
+            <script>
+                var graphs = {{plot | safe}};
+                Plotly.plot('multiline',graphs,{});
+            </script>
+        </div>
+      </div>
+    </div>
+    <div class="product-item-description left-5 text-center bg-faded p-5 rounded">
+      <div class="bg-faded p-5 rounded">
+        <h2 class="section-heading mb-4">
+          <span class="section-heading-upper">Explore</span>
+        </h2>
+        <p>This visualization allows for exploration of <b>Happiness</b> per unit of sentiment value. Since <b>Happiness</b> is divided by the value, lower results may be a better indicator of how <b>Your</b> important values effect <b>Happiness</b>. Find out how your most important values relate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
