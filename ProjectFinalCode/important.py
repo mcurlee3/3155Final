@@ -14,7 +14,7 @@ import json
 def Important(important):
     df_main = pd.read_csv("Data - General Data.csv", delimiter=",")
     df_main = df_main.sort_values('Country name')
-    sumColumns = 0
+    sumColumns = 1
     if "happiness" in important:
         sumColumns += df_main['Happiness Value']
     if "gdp" in important:

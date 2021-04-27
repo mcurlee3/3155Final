@@ -11,6 +11,7 @@ import plotly.express as px
 import pandas as pd
 import numpy as np
 import json
+from multiline import ML
 s = "nothing"
 
 
@@ -53,7 +54,9 @@ def map():
     
 @app.route('/multiLine')
 def multiLine():
-    return render_template('/multilinechart.html')
+    fig = ML()
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return render_template('/ml.html', plot = graphJSON)
 
 if __name__ == "__main__":
     app.run(debug=True)
