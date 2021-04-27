@@ -63,6 +63,10 @@ def multiLine():
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return render_template('/ml.html', plot = graphJSON)
 
+@app.route('/feedback')
+def feedback():
+    return render_template('/feedback.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
 
