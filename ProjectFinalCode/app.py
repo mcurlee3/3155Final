@@ -12,6 +12,7 @@ import pandas as pd
 import numpy as np
 import json
 from multiline import ML
+from Choropleth import choropleth
 s = "nothing"
 
 
@@ -51,7 +52,7 @@ def happyform():
 @app.route('/map')
 def map():
     ##fig holds the plotly plot information. Used normally to display the plot.
-    fig = ML()
+    fig = choropleth()
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return render_template('/Choropleth.html', plot = graphJSON)
     
@@ -64,4 +65,5 @@ def multiLine():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
