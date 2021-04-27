@@ -1,44 +1,44 @@
 {% extends "/base.html" %}
 {% block content%}
 <section class="page-section">
-    <div class="container">
-      <div class="product-item-description left-5 text-center bg-faded p-5 rounded">
-        <div class="intro">
-          <div class="bg-faded p-5 d-flex ml-auto rounded">
-            <div class="container">
-                <div class="col-xl-9 col-lg-10 mx-auto">
-                    <h2 class="section-heading mb-4">
-                      <span class="section-heading-upper">Your Best</span>
-                      <span class="section-heading-lower">Matches</span>
-                    </h2>
-                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
-                    <div class="col-xl-9 col-lg-10 mx-auto" id="piechart">
-                        <script>
-                            var graphs = {{plot | safe}};
-                            Plotly.plot('piechart',graphs,{});
-                        </script>
-                    </div>
-                </div>     
-            </div>        
-          </div>
+  <div class="container">
+    <div class="product-item-description left-5 text-center bg-faded p-5 rounded">
+      <div class="intro">
+        <div class="bg-faded p-5 d-flex ml-auto rounded">
+          <div class="container">
+              <div class="col-xl-9 col-lg-10 mx-auto">
+                  <h2 class="section-heading mb-4">
+                    <span class="section-heading-upper">Your Best</span>
+                    <span class="section-heading-lower">Matches</span>
+                  </h2>
+                  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+                  <div class="col-xl-9 col-lg-10 mx-auto" id="piechart">
+                      <script>
+                          var graphs = {{plot | safe}};
+                          Plotly.plot('piechart',graphs,{});
+                      </script>
+                  </div>
+              </div>     
+          </div>        
         </div>
       </div>
-    
-        <div class="product-item-description left-5 text-center bg-faded p-5 rounded">
-            <div class="bg-faded p-5 rounded">
-                <h2 class="section-heading mb-4">
-                    <span class="section-heading-upper">    Wiki Links</span>
-                  </h2>
-                <ul>
-                    {% for key, value in links.items() %}
-                    <a href ="{{value}}">{{key}}</a> 
-                    <br></br>
-                    {% endfor %}            
-                </dl>
-            </div>
-        </div>
-
     </div>
+    
+    <div class="product-item-description left-5 text-center bg-faded p-5 rounded">
+        <div class="bg-faded p-5 rounded">
+            <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">    Wiki Links</span>
+              </h2>
+            <ul>
+                {% for key, value in links.items() %}
+                <a href ="{{value}}">{{key}}</a> 
+                <br></br>
+                {% endfor %}            
+            </dl>
+        </div>
+    </div>
+
+  </div>
 </section>
 {% endblock content %}

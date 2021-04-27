@@ -54,6 +54,7 @@ def map():
     
 @app.route('/multiLine')
 def multiLine():
+    ##fig holds the plotly plot information. Used normally to display the plot.
     fig = ML()
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return render_template('/ml.html', plot = graphJSON)
