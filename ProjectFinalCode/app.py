@@ -50,7 +50,10 @@ def happyform():
 
 @app.route('/map')
 def map():
-    return render_template('/Happiness.html')
+    ##fig holds the plotly plot information. Used normally to display the plot.
+    fig = ML()
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return render_template('/Choropleth.html', plot = graphJSON)
     
 @app.route('/multiLine')
 def multiLine():
