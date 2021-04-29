@@ -9,8 +9,7 @@ import plotly.graph_objs as go
 import plotly.express as px
 import plotly
 import numpy as np
-from PIL import Image 
-import PIL 
+
 import json
 
 def Hyper(df_totals):

@@ -5,7 +5,7 @@ import plotly.graph_objs as go
 def ML():
 
     # Load CSV file from Datasets folder
-    df = pd.read_csv('/UNCC/Spring2021/ITSC-3155/Final/3155Final/Python/cHappiness.csv', nrows=25)
+    df = pd.read_csv('cHappiness.csv', nrows=25)
     # Preparing data
     trace1 = go.Scatter(x=df['Country name'], y=df['Happiness/GDP'], mode='lines', name='Happiness/GDP')
     trace2 = go.Scatter(x=df['Country name'], y=df['Happiness/Life Expetancy'], mode='lines', name='Happiness/Life Expetancy')
